@@ -12,16 +12,17 @@ const stats = [
 export default function About() {
   return (
     <SectionReveal>
-      <section id="about" className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+      <section id="about" className="py-20 md:py-28 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:max-w-[1400px]">
+          <div className="grid lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+              className="text-center lg:text-left"
             >
-              <span className="heading-label mb-6 block">About</span>
+              <span className="heading-label mb-6 inline-flex lg:block">About</span>
               <h2 className="heading-section mb-6 text-[#111111]">
                 Crafting exceptional digital experiences
               </h2>
@@ -53,7 +54,7 @@ export default function About() {
               {stats.map((stat, i) => (
                 <GlassCard
                   key={stat.label}
-                  className={`flex flex-col items-center text-center p-8 hover:-translate-y-1 ${
+                  className={`flex flex-col items-center text-center p-6 md:p-8 hover:-translate-y-1 ${
                     i === 2 ? 'sm:col-span-2 sm:flex-row sm:text-left sm:gap-6' : ''
                   }`}
                 >

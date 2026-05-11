@@ -53,10 +53,10 @@ export default function Testimonials() {
   }
 
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-[#F9FAFB]">
+    <section id="testimonials" className="py-20 md:py-28 lg:py-32 bg-[#F9FAFB]">
       <SectionReveal>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:max-w-[1400px]">
+          <div className="text-center mb-12 md:mb-16">
             <span className="heading-label mb-6 inline-flex">Testimonials</span>
             <h2 className="heading-section mt-4 text-[#111111]">
               Kind words
@@ -73,11 +73,11 @@ export default function Testimonials() {
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                <GlassCard className="text-center p-10 md:p-12 mx-auto w-full">
+                <GlassCard className="text-center p-6 sm:p-8 md:p-12 mx-auto w-full">
                   <div className="w-12 h-12 rounded-full bg-[#2563EB]/5 border border-[#2563EB]/10 flex items-center justify-center mx-auto mb-6">
                     <Quote size={22} className="text-[#2563EB]" />
                   </div>
-                  <p className="text-base md:text-lg text-[#666666] leading-relaxed mb-8 italic">
+                  <p className="text-sm sm:text-base md:text-lg text-[#666666] leading-relaxed mb-6 md:mb-8 italic">
                     "{testimonials[currentIndex].quote}"
                   </p>
                   <div className="flex items-center justify-center gap-4">

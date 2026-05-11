@@ -27,9 +27,9 @@ export default function Contact() {
 
   return (
     <SectionReveal>
-      <section id="contact" className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section id="contact" className="py-20 md:py-28 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:max-w-[1400px]">
+          <div className="text-center mb-12 md:mb-16">
             <span className="heading-label mb-6 inline-flex">Contact</span>
             <h2 className="heading-section mt-4 text-[#111111]">
               Let's work together
@@ -43,7 +43,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             >
-              <GlassCard className="p-8 md:p-10">
+              <GlassCard className="p-6 md:p-10">
                 <h3 className="text-lg font-bold text-[#111111] mb-2">Get in touch</h3>
                 <p className="text-sm text-[#666666] mb-8">
                   Have a project in mind? Let's create something amazing together.
@@ -99,8 +99,8 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
             >
-              <GlassCard className="p-8 md:p-10">
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <GlassCard className="p-6 md:p-10">
+                <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
                   {[
                     { label: 'Your Name', name: 'name', type: 'text', required: true },
                     { label: 'Your Email', name: 'email', type: 'email', required: true },

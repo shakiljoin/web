@@ -29,22 +29,20 @@ const services = [
 export default function Services() {
   return (
     <SectionReveal>
-      <section id="services" className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section id="services" className="py-20 md:py-28 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:max-w-[1400px]">
+          <div className="text-center mb-12 md:mb-16">
             <span className="heading-label mb-6 inline-flex">Services</span>
             <h2 className="heading-section mt-4 text-[#111111]">
               What I do
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, i) => {
-              const isWide = i === services.length - 1
               return (
                 <motion.div
                   key={service.title}
-                  className={`${isWide ? 'sm:col-span-2 lg:col-span-1' : ''}`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}

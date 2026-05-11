@@ -23,41 +23,42 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <section id="home" className="relative min-h-[90dvh] lg:min-h-screen flex items-center overflow-hidden pt-20 pb-12 lg:pb-0">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-[#2563EB]/5 blur-[120px] animate-float-slow" />
-        <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full bg-[#7c3aed]/5 blur-[100px] animate-float" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#2563EB]/3 blur-[150px] animate-pulse-glow" />
+        <div className="hidden md:block absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full bg-[#2563EB]/5 blur-[120px] animate-float-slow" />
+        <div className="hidden md:block absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full bg-[#7c3aed]/5 blur-[100px] animate-float" />
+        <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#2563EB]/3 blur-[150px] animate-pulse-glow" />
+        <div className="md:hidden absolute top-0 -right-32 w-[300px] h-[300px] rounded-full bg-[#2563EB]/5 blur-[80px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:max-w-[1400px] w-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="relative"
+            className="relative text-center lg:text-left"
           >
-            <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2563EB]/5 border border-[#2563EB]/10 text-xs font-semibold text-[#2563EB]">
+            <motion.div variants={itemVariants} className="mb-5 lg:mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#2563EB]/5 border border-[#2563EB]/10 text-xs font-semibold text-[#2563EB] mx-auto lg:mx-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] animate-pulse" />
                 Frontend Developer
               </span>
             </motion.div>
 
-            <motion.h1 variants={itemVariants} className="heading-hero mb-6">
+            <motion.h1 variants={itemVariants} className="heading-hero mb-5 lg:mb-6">
               Shakil <br />
               <span className="text-gradient">Ahamed</span>
             </motion.h1>
 
-            <motion.p variants={itemVariants} className="text-lg lg:text-xl text-[#666666] max-w-xl mb-8 leading-relaxed">
+            <motion.p variants={itemVariants} className="text-base sm:text-lg lg:text-xl text-[#666666] max-w-lg sm:max-w-xl mb-7 lg:mb-8 leading-relaxed mx-auto lg:mx-0">
               Frontend Developer & UI/UX Designer crafting modern, scalable, and premium web experiences.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex items-center gap-4 flex-wrap">
+            <motion.div variants={itemVariants} className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center lg:justify-start">
               <button
                 onClick={() => scrollToSection('#projects')}
-                className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#111111] text-white text-sm font-medium overflow-hidden transition-all duration-300 hover:bg-[#2563EB]"
+                className="group relative inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 min-h-[48px] rounded-xl bg-[#111111] text-white text-sm font-medium overflow-hidden transition-all duration-300 hover:bg-[#2563EB]"
               >
                 <span className="relative z-10">View Projects</span>
                 <ArrowRight size={16} className="relative z-10 group-hover:translate-x-1 transition-transform" />
@@ -65,14 +66,14 @@ export default function Hero() {
               </button>
               <button
                 onClick={() => scrollToSection('#contact')}
-                className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-[#E5E7EB] text-[#666666] text-sm font-medium hover:border-[#2563EB]/30 hover:text-[#2563EB] hover:bg-[#2563EB]/5 transition-all duration-300"
+                className="group inline-flex items-center gap-2 px-6 sm:px-7 py-3.5 min-h-[48px] rounded-xl border border-[#E5E7EB] text-[#666666] text-sm font-medium hover:border-[#2563EB]/30 hover:text-[#2563EB] hover:bg-[#2563EB]/5 transition-all duration-300"
               >
                 Contact Me
                 <ExternalLink size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="mt-10 flex items-center gap-6">
+            <motion.div variants={itemVariants} className="mt-8 lg:mt-10 flex items-center gap-6 justify-center lg:justify-start">
               {[
                 { label: 'GitHub', href: '#' },
                 { label: 'LinkedIn', href: '#' },
@@ -95,10 +96,10 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <div className="relative w-full max-w-[420px]">
-              <div className="absolute -inset-8 bg-gradient-to-br from-[#2563EB]/20 via-[#7c3aed]/10 to-transparent rounded-3xl blur-2xl animate-pulse-glow" />
+            <div className="relative w-full max-w-[360px] sm:max-w-[420px]">
+              <div className="hidden md:block absolute -inset-8 bg-gradient-to-br from-[#2563EB]/20 via-[#7c3aed]/10 to-transparent rounded-3xl blur-2xl animate-pulse-glow" />
 
-              <div className="relative glass-card rounded-2xl p-8 overflow-hidden">
+              <div className="relative glass-card rounded-2xl p-6 sm:p-8 overflow-hidden">
                 <div
                   className="absolute inset-0 rounded-2xl pointer-events-none"
                   style={{
@@ -110,27 +111,27 @@ export default function Hero() {
                   }}
                 />
 
-                <div className="relative mb-6 flex justify-center">
-                  <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-[#2563EB]/10 to-[#7c3aed]/10 flex items-center justify-center overflow-hidden border border-[#E5E7EB]">
-                    <span className="text-5xl font-bold text-gradient">SA</span>
+                <div className="relative mb-5 sm:mb-6 flex justify-center">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-gradient-to-br from-[#2563EB]/10 to-[#7c3aed]/10 flex items-center justify-center overflow-hidden border border-[#E5E7EB]">
+                    <span className="text-4xl sm:text-5xl font-bold text-gradient">SA</span>
                   </div>
                   <div className="absolute -top-2 -right-2 w-3 h-3 rounded-full bg-[#2563EB] animate-pulse" />
                   <div className="absolute -bottom-1 -left-1 w-2 h-2 rounded-full bg-[#7c3aed] animate-pulse" style={{ animationDelay: '0.5s' }} />
                 </div>
 
                 <div className="text-center space-y-3">
-                  <h3 className="text-xl font-bold text-[#111111]">Shakil Ahamed</h3>
-                  <p className="text-sm text-[#666666]">Frontend Developer & UI/UX Designer</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-[#111111]">Shakil Ahamed</h3>
+                  <p className="text-xs sm:text-sm text-[#666666]">Frontend Developer & UI/UX Designer</p>
                   <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2563EB]/5 border border-[#2563EB]/10 text-xs text-[#2563EB] font-medium">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
                     Available for work
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-[#E5E7EB]">
-                  <div className="flex justify-center gap-4">
+                <div className="mt-5 sm:mt-6 pt-5 sm:pt-6 border-t border-[#E5E7EB]">
+                  <div className="flex justify-center gap-2 sm:gap-4 flex-wrap">
                     {['Web Application', 'Mobile Development', 'UI/UX Design'].map((skill) => (
-                      <span key={skill} className="px-3 py-1 rounded-lg bg-[#F9FAFB] text-xs font-medium text-[#666666] border border-[#E5E7EB]">
+                      <span key={skill} className="px-2.5 sm:px-3 py-1 rounded-lg bg-[#F9FAFB] text-[10px] sm:text-xs font-medium text-[#666666] border border-[#E5E7EB]">
                         {skill}
                       </span>
                     ))}

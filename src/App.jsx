@@ -35,14 +35,15 @@ export default function App() {
 
   useEffect(() => {
     if (!loading) {
+      const isMobile = window.innerWidth < 768
       const lenis = new Lenis({
-        duration: 1.2,
+        duration: isMobile ? 0.5 : 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
         gestureOrientation: 'vertical',
-        smoothWheel: true,
-        wheelMultiplier: 1,
-        touchMultiplier: 2,
+        smoothWheel: !isMobile,
+        wheelMultiplier: isMobile ? 0.5 : 1,
+        touchMultiplier: isMobile ? 1 : 2,
         infinite: false,
       })
 

@@ -39,7 +39,7 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:max-w-[1400px]">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <button onClick={() => handleClick('#home')} className="flex items-center gap-2 group">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#2563EB] to-[#7c3aed] flex items-center justify-center text-white text-xs font-bold">
@@ -83,37 +83,54 @@ export default function Navbar() {
 
       <AnimatePresence>
         {isMobileOpen && (
-          <motion.div
-            className="fixed inset-0 z-40 bg-white/90 backdrop-blur-xl pt-20"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="flex flex-col items-center justify-center gap-8 h-full">
-              {navLinks.map((link, i) => (
-                <motion.button
-                  key={link.label}
-                  onClick={() => handleClick(link.href)}
-                  className="text-2xl font-semibold text-[#111111] hover:text-[#2563EB] transition-colors"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                >
-                  {link.label}
-                </motion.button>
-              ))}
-              <motion.button
-                onClick={() => handleClick('#contact')}
-                className="mt-4 px-8 py-3 rounded-xl bg-[#111111] text-white text-base font-medium hover:bg-[#2563EB] transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
+          <>
+            <motion.div
+              className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={() => setIsMobileOpen(false)}
+            />
+            <motion.div
+              className="fixed inset-y-0 right-0 z-50 w-72 sm:w-80 bg-white/95 backdrop-blur-2xl shadow-2xl pt-24"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+            >
+              <button
+                onClick={() => setIsMobileOpen(false)}
+                className="absolute top-6 right-6 p-2 rounded-lg hover:bg-[#E5E7EB]/50 transition-colors"
+                aria-label="Close menu"
               >
-                Let's Talk
-              </motion.button>
-            </div>
-          </motion.div>
+                <X size={20} />
+              </button>
+              <div className="flex flex-col gap-2 px-8">
+                {navLinks.map((link, i) => (
+                  <motion.button
+                    key={link.label}
+                    onClick={() => handleClick(link.href)}
+                    className="w-full text-left px-4 py-3.5 rounded-xl text-base font-medium text-[#666666] hover:text-[#111111] hover:bg-[#F9FAFB] transition-all duration-200"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.08 }}
+                  >
+                    {link.label}
+                  </motion.button>
+                ))}
+                <motion.button
+                  onClick={() => handleClick('#contact')}
+                  className="mt-4 w-full px-6 py-3.5 rounded-xl bg-[#111111] text-white text-sm font-medium hover:bg-[#2563EB] transition-all duration-300"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.32 }}
+                >
+                  Let's Talk
+                </motion.button>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>

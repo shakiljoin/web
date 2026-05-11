@@ -194,4 +194,34 @@
   .custom-cursor {
     display: none !important;
   }
+
+  .glass-card {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .animate-float,
+  .animate-float-slow,
+  .animate-morph,
+  .animate-border-glow {
+    animation: none;
+  }
+
+  .animate-pulse-glow {
+    animation-duration: 8s;
+  }
+
+  .text-gradient {
+    animation: none;
+  }
+}
+
+@media (min-width: 1920px) {
+  .heading-hero {
+    font-size: clamp(3.5rem, 5vw, 6rem);
+  }
+
+  .heading-section {
+    font-size: clamp(2.5rem, 3.5vw, 4rem);
+  }
 }

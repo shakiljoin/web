@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import SectionReveal from '../components/SectionReveal'
 import GlassCard from '../components/GlassCard'
-import { Code2, Palette, Wrench, Database } from 'lucide-react'
+import { Code2, Palette, Wrench, Database, Brain } from 'lucide-react'
 
 const skillCategories = [
   {
@@ -36,7 +36,7 @@ const skillCategories = [
   },
   { 
     title:'AI Tools',
-    icon: Wrench,
+    icon: Brain,
     skills: [
       { name: 'ChatGPT', level: 90 },
       { name: 'Claude', level: 80 },
@@ -61,22 +61,22 @@ const iconMap = {
   'UI/UX': Palette,
   Tools: Wrench,
   'Backend Basics': Database,
-  'AI Tools': Wrench,
+  'AI Tools': Brain,
 }
 
 export default function Skills() {
   return (
     <SectionReveal>
-      <section id="skills" className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section id="skills" className="py-20 md:py-28 lg:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:max-w-[1400px]">
+          <div className="text-center mb-12 md:mb-16">
             <span className="heading-label mb-6 inline-flex">Skills</span>
             <h2 className="heading-section mt-4 text-[#111111]">
               Technologies & expertise
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 md:gap-6">
             {skillCategories.map((category, i) => {
               const Icon = iconMap[category.title]
               return (
@@ -87,7 +87,7 @@ export default function Skills() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                 >
-                  <GlassCard className="h-full group hover:-translate-y-1">
+                  <GlassCard className="h-full group hover:-translate-y-1 p-5 md:p-6">
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-10 h-10 rounded-xl bg-[#2563EB]/5 border border-[#2563EB]/10 flex items-center justify-center group-hover:bg-[#2563EB]/10 transition-colors">
                         <Icon size={20} className="text-[#2563EB]" />

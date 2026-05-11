@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-[#E5E7EB]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 2xl:max-w-[1400px]">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-8">
           <div className="flex items-center gap-2">
             <button onClick={() => scrollToSection('#home')}>
