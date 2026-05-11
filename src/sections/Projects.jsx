@@ -34,7 +34,7 @@ const projects = [
     gradient: 'from-[#2563EB] to-[#7c3aed]',
     imageBg: 'from-blue-50 to-indigo-50',
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/shakiljoin/web',
   }
  
 ]
